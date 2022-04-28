@@ -1,150 +1,97 @@
+# Intial Deploy to heroku
+Intially I was not able to push a simple bot to heroku, but yeah googling a lot made it work!
 
-   #زبان راهنما : فارسی
-   زبان های راهنما : فارسی
-	
+## Very Initial Steps [NOOB Steps]
+1. Install Telegram :)
+2. Create a telegram bot by talking to [Bot Father](https://t.me/botfather)
+3. Install python in your computer, if you are on windows follow [this](https://www.python.org/downloads/windows/)
+4. Install git, follow [this](https://git-scm.com/download/win)
+5. Install Heroku account [here](https://signup.heroku.com/login)
+6. Install Heroku CLI from [here](https://devcenter.heroku.com/articles/heroku-cli)
+7. Install editor of your choice, I preffer [Atom](https://atom.io)
 
-	
-   ## مراحل خیلی ابتدایی
-   1. اگر پایتون در سیستم شما نصب نیست ، پایتون را از [اینجا](https://www.python.org/downloads/windows/) دانلود کنید و سپس نصب کنید.
-   2. برنامه git را از طریق این [لینک](https://git-scm.com/download/win) دانلود و سپس نصب کنید.
-   3. از طریق این [لینک](https://signup.heroku.com/login) در وبسایت Heroku ثبت نام کنید.
-   4. برنامه Heroku CLI را از طریق این [لینک](https://devcenter.heroku.com/articles/heroku-cli) دانلود و نصب کنید.
-	
-   ### مرحله 0 :
+### Step 0 [Optional]:
 
-   - برای شروع با استفاده از دستور زیر این repository را clone کنید و سپس طبق مراحل زیر تغییرات مختص به خودتان را انجام بدهید. 
-<div dir="ltr">
-  
-   -  ```shell
-      git clone https://github.com/M-Sajad/Project-Heroku.git
-   -  ```shell
-      cd Project-Heroku   
-</div>
-
-   ### مرحله یک :
-
-   - بر روی bot.py کلیک راست کنید و کد های مربوط بات خودتان را در آن جایگزاری کنید و سپس فایل را ذخیره کنیدو ببنید.
-
+- Just git clone this repository and start working by editing the code
+   ```shell
+   git clone https://github.com/AnshumanFauzdar/telegram-bot-heroku-deploy.git
+   cd telegram-bot-heroku-deploy
+- Or follow steps below!   
    
-   ### مرحله دوم :
+### Step 1:
 
-   - اگر شما میخواهید نام فایل *bot.py* را تغییر دهید ، باید بعد از تغییر ، محتوای فایل *Procfile* را نیز تغییر دهید ، یعنی آنکه بر روی *Procfile* کلیک راست کنید
-	و سپس Edit with notepad را بزنید و به شکل کد زیر محتوا را تغییر بدهید یعنی بجای *Project.py* نام فایلی که کدتان درآن قرار دارد را بزنید.
- <div dir="ltr">
+- Create your bot like we have bot.py and write any python code that is intially working on your local machine!
+### Step 2:
 
-   -  ```shell
-      worker: python Project.py
-</div>
-   
-   ### مرحله سوم :
+- Make a folder like *telegram-bot* and put *bot.py* in the folder
+### Step 3:
 
-- نام هر ماژول یا کتاب خانه ای که داخل پروژه و سورس کد خود استفاده کرده اید را در فایل *requirements.txt* وارد کنید. 
+- Make a blank python file named 
+   ```shell
+   __init__.py
+### Step 4:
 
-	- به طور مثال چندین ماژول را در *requirements.txt* وارد کرده ایم :
-<div dir="ltr">
-	    
-	mutagen
-	gtts
-	rubika
-</div>
+- Make a *Procfile* this should be without any extension like .txt, you can go to view -> tick file name extensions and remove any extension
+   ```shell
+   worker: python bot.py
+- Write this in Procfile by using notepad or any editor of your choice! Here bot.py is your python code!
+### Step 5:
 
-### مرحله چهارم :
-- محیط Bash یا CMD را باز کنید و به محلی که فایل هایتان یعنی *bot.py* قرار دارد ، بروید. 
-- در همان محیط با کمک کد زیر ، git را راه اندازی کنید.
-
-<div dir="ltr">
-  
-   -  ```shell
-      git init	   
-</div>
-
-### مرحله پنجم :
-- heroku CLI را نصب کنید.
-- سپس دستور زیر را وارد کنید : 
-
-<div dir="ltr">
-  
-   -  ```shell
-      heroku login
-      heroku create app_name	   
-</div>
-
-- اگر از قبل یک اپلیکیشن در وبسایت Heroku ساخته اید ، از کد زیر استفاده کنید و نام اپلیکیشن خود را جاگزین app_name کنید.
-
- <div dir="ltr">
-  
-   -  ```shell
-      heroku git:remote -a app_name	   
-</div>
-
- - در ادامه کد زیر را وارد کنید ، دقت کنید که با استفاده از این کد ، در حقیقت پروژه خود را بر Heroku آپلود کرده اید :
- <div dir="ltr">
-  
-   -  ```shell
-      git add -f bot.py Procfile rules.txt help.txt requirements.txt __init__.py
-   -  ```shell
-      git commit -m "Added Files"	   
-</div>
-     
-  
-- با استفاده از دستور زیر ، آپلود فایل هایتان آغاز میشود و بر وبسایت Heroku قرار میگیرد.
- <div dir="ltr">
-  
-   -  ```shell
-      git push heroku master   
-</div>
-- اگر در هنگام وارد کردن کد بالا با ارور مواجه شدید ، کد زیر را وارد نمایید :
-
-<div dir="ltr">
-  
-   -  ```shell
-      git push heroku master  --force 
-</div>
-
-### تبریک ، ربات شما در تلگرام ران شد ، اگر ران نبود با استفاده از کد زیر اطمینان حاصل کنید : 
+- Now we have to make a *requirements.txt* through which heroku will install the dependencies to make our bot work!
+- What to add in requirements.txt
+  - Mine looks like this:
+  ```shell
+  future>=0.16.0
+  certifi
+  tornado>=5.1
+  cryptography
+  python-telegram-bot
  
- <div dir="ltr">
+ Add anything which you have included in the python code!
+
+### Step 6:
+- Change directory to where you have made these files
+- now in git bash CLI, intialize a git
+  ```shell
+  git init
   
-   -  ```shell
-      heroku ps
-</div>
+### Step 7:
+- Now install heroku CLI
+- Next
+  ```shell
+  heroku login
+  heroku create app_name
+- If you have already created app then select it:
+  ```shell
+  heroku git:remote -a app_name
+- Or else continue:
+  ```shell
+  git add -f bot.py Procfile requirements.txt __init__.py
+- ```shell
+  git commit -m "Added Files"
+- Push files to heroku:
+  ```shell
+  git push heroku master
+- If it is not working then try this one:
+   ```shell
+   git push heroku master --force
+### At this point your bot should be running, you can check by
+-  ```shell
+    heroku ps
+If it is not running then we have to reset dynos:
+- ```shell
+  heroku ps:scale worker=0
+- ```shell
+  heroku ps:scale worker=1
+Now it should be running fine! Enjoy :)  
 
+### If you are trying to lazy which you should not! (Deploying to Heroku)
 
-- اگر ران نشده بود با استفاده از کد زیر dynos را ریست میکنیم :
-  
- <div dir="ltr">
-  
-   -  ```shell
-      heroku ps:scale worker=0
-   -  ```shell
-      heroku ps:scale worker=1
-</div>
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/AnshumanFauzdar/telegram-bot-heroku-deploy/blob/master)
 
+Choose App name and deploy!
+Follow from Step 7 and edit bot.py with your token!
+And finally deploy!
 
-- حالا باید ران شده باشد ، امیدواریم از این آموزش لذت برده باشید. 
-   
-### تماس با ما :	
-<div dir="ltr">
-  
-  -  ```shell
-      Telegram : @Sajad_Venus
-      Rubika : @Sajad_Venus   
-</div>
-
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-
+### Want a video tutorial?
+- Check It [Here!](https://github.com/AnshumanFauzdar/telegram-bot-heroku-deploy/issues/1)
