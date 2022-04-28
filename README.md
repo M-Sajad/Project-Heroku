@@ -16,7 +16,7 @@
 <div dir="ltr">
   
    -  ```shell
-      git clone https://github.com/Sajad-m/Project-Heroku.git
+      git clone https://github.com/Its-Sajad/Project-Heroku.git
    -  ```shell
       cd Project-Heroku   
 </div>
