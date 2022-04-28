@@ -1,0 +1,7 @@
+{
+  "name": "Heroku rubika python deploy",
+  "description": "Heroku rubika python deploy",
+  "repository": "https://github.com/AnshumanFauzdar/telegram-bot-heroku-deploy",
+  "logo": "https://rubika.ir/static/images/logos/minimal/minimal.png",
+  "keywords": ["node", "express", "static"]
+}
